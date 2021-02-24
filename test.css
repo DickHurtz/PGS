@@ -1,0 +1,268 @@
+body *{
+	box-sizing: border-box;
+	transition:0.2s;
+}
+body{
+	font-family:roboto;
+	font-size: 18px;
+	margin:0;
+	height: 100vh;
+	background-color: rgb(48, 48, 48);
+	position:relative;
+}
+.night *{
+	opacity:0.9;
+}
+input, button, .remove, header .fas{
+	cursor:pointer;
+}
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+	background-color:transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(255, 118, 38); 
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(200, 68, 0); 
+}
+header{
+	background-color: rgb(255, 118, 38);
+	height: 10vh;
+	display: flex;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+	padding-right: 20px;
+}
+main{
+	padding: 40px 20px 20px;
+	height: 90vh;
+}
+.flex{
+	display:flex;
+}
+.f-cont{
+	height: 100%;
+	justify-content:space-between;
+	position:relative;
+}
+.save,.window{
+	position:absolute;
+	display:none;
+}
+#save-list{
+    border: none;
+    font-size: 20px;
+    padding: 10px 20px;
+	bottom:5%;	
+	right:5%;
+	background:rgb(255, 118, 38);
+	color:#000;
+}
+#save-list:hover{
+	
+	background: rgb(200, 68, 0); 
+}
+#save-list .fas{
+	padding-left:10px;
+	color:#000;
+}
+.save.show,.window.show{
+	display:block;
+}
+.window{
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+	background:rgba(0,0,0,0.5);
+}
+.fas{
+	color: rgb(240,240,240);
+}
+.w-cont{
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	margin:auto;
+	width:50%;
+	height:auto;
+	z-index:100;
+	background:rgb(66, 66, 66);
+	padding:25px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0px 0px 15px 20px rgb(0 0 0 / 25%); 
+	box-shadow:0px 0px 15px 20px rgb(0 0 0 / 25%);
+}
+.w-cont div > label:nth-of-type(2){
+	visibility:hidden;
+}
+.w-cont .nope > label:nth-of-type(2){
+	visibility:visible;
+}
+.w-cont input{
+	position:relative;
+}
+.w-cont label{
+	font-size: 14px;
+	color: rgb(199,199,199);
+}
+.w-cont label:nth-of-type(1){
+	position:absolute;
+}
+.nope label{
+	color:rgb(244,67,54);
+}
+.nope input{
+	border-color:rgb(244,67,54);
+}
+h3 {
+	margin:0;
+	color:rgb(199,199,199);
+	padding-bottom:10px;
+}
+div.butts{
+	padding-top:20px;
+	margin-right: -15px;
+	text-align:right;
+}
+.button{
+    background: none;
+	font-size:16px;
+	padding: 5px 15px;
+    text-transform: uppercase;
+    border: none;
+	color: rgb(240,240,240);
+}
+.f-cont > *{
+	background-color: rgb(66, 66, 66);
+	padding: 15px;
+	border-radius: 5px;
+	color: rgb(199,199,199);
+}
+.left{
+	width:calc(100% / 3);
+	position:relative;
+}
+.selected{
+	pointer-events:none;
+}
+.remove{
+	position:absolute;
+	right:0;
+	border: 3px solid;
+    border-radius: 100%;
+    text-align: center;
+    font-size: 14px;
+	z-index:50;
+	pointer-events: auto;
+}
+.remove:hover{
+	
+}
+#playlist .fa-times{
+    height: 20px;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+.right{
+	width:calc(100% / 1.7);
+	position:relative;
+	overflow-y: scroll;
+}
+.right .button{
+	display: block;
+    margin: auto;
+	padding: 15px 0;
+}
+.right .button:after{
+	padding: 0 5px;
+	content:'\f107';
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	font-size:18px;
+}
+.empty{
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	margin:auto;
+	height: 0;
+    width: auto;
+    text-align: center;
+}
+.s-cont{
+	position:relative;
+}
+#search,.input{
+	font-size: 18px;
+	padding: 30px 0 5px 0;
+	color: rgb(199,199,199);
+	background: transparent;
+	border:0;
+	border-bottom: 2px solid rgb(199,199,199);
+	width:100%;
+}
+#search + label{
+	position:absolute;
+	top:0;
+	left:0;
+	width:auto;
+	font-size:0;
+	transition:0.3s;
+}
+#search:focus,.input:focus{
+	outline: 0;
+	border:0;
+	border-bottom:2px solid rgb(255, 118, 38);
+}
+#search:focus + label{
+	color:  rgb(255, 118, 38);
+	font-size: 14px;
+}
+#results{
+	height: 100%;
+}
+.row{
+	position:relative;
+	border-bottom: 1px solid;
+	padding:10px 15px; 
+	display:flex;
+	align-items:center;
+}
+.row > div:first-of-type{
+	padding-right:15px;
+}
+.row img{
+	border-radius: 100%;
+    overflow: hidden;
+}
+.row .info > div{
+	padding: 5px 0;
+}
+.row .info > div:last-of-type{
+	font-size:14px;
+}
+@media only screen and (max-width: 768px) {
+	.right,
+	.left{
+		width: 100%;
+		margin: 10px 0;
+	}
+	.f-cont{
+		flex-wrap: wrap-reverse;
+	}
+}
+rgb(255, 118, 38);//org
+rgb(48, 48, 48);//txt
+rgb(48, 48, 48); //main
+rgb(66, 66, 66); //not m
